@@ -16,27 +16,42 @@ inputGenera.addEventListener ('click', function() {
     let bigliettoYoung = prezzoGiovani.toFixed(2)
     let bigliettoOver = prezzoAnziani.toFixed(2)
 
+    let datiValidi = true
+
     let nomeVisualizzato = document.getElementById("nome-passeggero")
     nomeVisualizzato.innerHTML = `${inputPasseggero.value}`
 
-        if (inputEta.value < 18) {
-            prezzoGiovani
-            let offertaVisualizzata = document.getElementById("tipo-biglietto")
-            offertaVisualizzata.innerHTML = `Biglietto Young`
-            let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
-            prezzoVisualizzato.innerHTML = `${bigliettoYoung} €`
-        } else if (inputEta.value > 65) {
-            prezzoAnziani
-            let offertaVisualizzata = document.getElementById("tipo-biglietto")
-            offertaVisualizzata.innerHTML = `Biglietto Over65`
-            let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
-            prezzoVisualizzato.innerHTML = `${bigliettoOver} €`
-        } else if ((inputEta.value >= 18) || (inputEta.value <= 65)) {
-            let offertaVisualizzata = document.getElementById("tipo-biglietto")
-            offertaVisualizzata.innerHTML = `Biglietto Standard`
-            let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
-            prezzoVisualizzato.innerHTML = `${prezzoFinale} €` }
+    if ((inputEta.value === "0") || (inputKm.value === "0") || (inputPasseggero.value === "0")) {
+        datiValidi = false
+        alert("Inserisci dei dati validi, tutti i campi devono essere compilati.")
+    }
 
+    if ((inputEta.value === "") || (inputKm.value === "") || (inputPasseggero.value === "") ) {
+        datiValidi = false
+        alert("Inserisci dei dati validi, tutti i campi devono essere compilati.")
+    }
+    
+    if (datiValidi) {
+        if (inputEta.value < 18) {
+        prezzoGiovani
+        let offertaVisualizzata = document.getElementById("tipo-biglietto")
+        offertaVisualizzata.innerHTML = `Bigl. Young`            
+        let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
+        prezzoVisualizzato.innerHTML = `${bigliettoYoung} €`
+    } else if (inputEta.value > 65) {
+        prezzoAnziani
+        let offertaVisualizzata = document.getElementById("tipo-biglietto")
+        offertaVisualizzata.innerHTML = `Bigl. Over65`
+        let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
+        prezzoVisualizzato.innerHTML = `${bigliettoOver} €`
+    } else if ((inputEta.value >= 18) || (inputEta.value <= 65)) {
+        let offertaVisualizzata = document.getElementById("tipo-biglietto")
+        offertaVisualizzata.innerHTML = `Bigl. Standard`
+        let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
+        prezzoVisualizzato.innerHTML = `${prezzoFinale} €` }
+    }
+
+    if (datiValidi) {
         let numeroCarrozza = Math.floor(Math.random() * 15)
         let carrozzaPasseggero = document.getElementById("numero-carrozza")
         carrozzaPasseggero.innerHTML = `${numeroCarrozza}`
@@ -44,6 +59,7 @@ inputGenera.addEventListener ('click', function() {
         let codiceCp = Math.floor(Math.random() * 99999)
         let codicePasseggero = document.getElementById("codice-biglietto")
         codicePasseggero.innerHTML = `${codiceCp}`
+    }
 
     console.log(inputPasseggero.value, inputEta.value, inputKm.value, prezzoBiglietto, prezzoAnziani, prezzoGiovani)
 })
