@@ -1,0 +1,26 @@
+.full-view {
+    background-color: #B91450;
+    height: 100vh;
+}
+
+.data-container {
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #333333;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.ticket-container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 0 5px #333333;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.dettagli {
+    font-weight: bold;
+    font-size: .8rem;
+}
