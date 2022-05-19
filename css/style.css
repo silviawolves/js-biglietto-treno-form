@@ -48,6 +48,10 @@ input[type=text], input[type=number] {
 }
 
 /* BIGLIETTO GENERATO */
+.ticket {
+    display: block;
+}
+
 .ticket-container {
     width: 80%;
     background-color: white;

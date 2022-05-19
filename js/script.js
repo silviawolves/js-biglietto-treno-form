@@ -6,6 +6,9 @@ const inputEta = document.querySelector("[name=eta]")
 const inputGenera = document.getElementById("button-genera")
 const inputAnnulla = document.getElementById("button-annulla")
 
+const ticketDiv = document.querySelector(".ticket")
+ticketDiv.classList.replace("d-block", "d-none")
+
 inputGenera.addEventListener ('click', function() {
     let prezzoBiglietto = inputKm.value * 0.21
     const scontoGiovani = (20 / 100 ) * prezzoBiglietto
@@ -15,7 +18,6 @@ inputGenera.addEventListener ('click', function() {
     let prezzoFinale = prezzoBiglietto.toFixed(2)
     let bigliettoYoung = prezzoGiovani.toFixed(2)
     let bigliettoOver = prezzoAnziani.toFixed(2)
-
     let datiValidi = true
 
     let nomeVisualizzato = document.getElementById("nome-passeggero")
@@ -30,7 +32,7 @@ inputGenera.addEventListener ('click', function() {
         datiValidi = false
         alert("Inserisci dei dati validi, tutti i campi devono essere compilati.")
     }
-    
+
     if (datiValidi) {
         if (inputEta.value < 18) {
         prezzoGiovani
@@ -61,22 +63,16 @@ inputGenera.addEventListener ('click', function() {
         codicePasseggero.innerHTML = `${codiceCp}`
     }
 
+    if (datiValidi) {
+        ticketDiv.classList.replace("d-none", "d-block")
+    }
+
     console.log(inputPasseggero.value, inputEta.value, inputKm.value, prezzoBiglietto, prezzoAnziani, prezzoGiovani)
 })
 
 inputAnnulla.addEventListener ('click', function() {
     window.location.reload();
 })
-
-
-
-//const nomeVisualizzato = document.getElementById("nome-passeggero")
-//nomeVisualizzato.innerHTML = inputPasseggero.value
-
-
-
-
-
 
 
 /*
