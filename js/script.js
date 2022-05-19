@@ -37,6 +37,14 @@ inputGenera.addEventListener ('click', function() {
             let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
             prezzoVisualizzato.innerHTML = `${prezzoFinale} €` }
 
+        let numeroCarrozza = Math.floor(Math.random() * 15)
+        let carrozzaPasseggero = document.getElementById("numero-carrozza")
+        carrozzaPasseggero.innerHTML = `${numeroCarrozza}`
+
+        let codiceCp = Math.floor(Math.random() * 99999)
+        let codicePasseggero = document.getElementById("codice-biglietto")
+        codicePasseggero.innerHTML = `${codiceCp}`
+
     console.log(inputPasseggero.value, inputEta.value, inputKm.value, prezzoBiglietto, prezzoAnziani, prezzoGiovani)
 })
 
