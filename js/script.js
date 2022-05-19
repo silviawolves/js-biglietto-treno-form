@@ -5,9 +5,29 @@ const inputKm = document.querySelector("[name=km]")
 const inputEta = document.querySelector("[name=eta]")
 const inputGenera = document.getElementById("button-genera")
 
+let eta = parseInt(inputEta.value)
+
 inputGenera.addEventListener ('click', function() {
     let prezzoBiglietto = inputKm.value * 0.21
-    console.log(inputPasseggero.value, inputEta.value, inputKm.value, prezzoBiglietto)
+    const scontoGiovani = (20 / 100 ) * prezzoBiglietto
+    const prezzoGiovani = prezzoBiglietto - scontoGiovani
+    const scontoAnziani = (40 / 100) * prezzoBiglietto
+    const prezzoAnziani = prezzoBiglietto - scontoAnziani
+    let prezzoFinale = prezzoBiglietto.toFixed(2)
+
+        if (eta < 18) {
+            prezzoGiovani
+            let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
+            prezzoVisualizzato.innerHTML = `${prezzoGiovani} €`
+        } else if (eta > 65) {
+            prezzoAnziani
+            let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
+            prezzoVisualizzato.innerHTML = `${prezzoAnziani} €`
+        } else if ((eta >= 18) || (eta <= 65)) {
+            let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
+            prezzoVisualizzato.innerHTML = `${prezzoFinale} €` }
+
+    console.log(inputPasseggero.value, inputEta.value, inputKm.value, prezzoBiglietto, prezzoAnziani, prezzoGiovani)
 })
 
 
