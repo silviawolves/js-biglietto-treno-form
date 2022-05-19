@@ -37,24 +37,24 @@ inputGenera.addEventListener ('click', function() {
         if (inputEta.value < 18) {
         prezzoGiovani
         let offertaVisualizzata = document.getElementById("tipo-biglietto")
-        offertaVisualizzata.innerHTML = `Bigl. Young`            
+        offertaVisualizzata.innerHTML = `Biglietto Young`            
         let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
         prezzoVisualizzato.innerHTML = `${bigliettoYoung} €`
     } else if (inputEta.value > 65) {
         prezzoAnziani
         let offertaVisualizzata = document.getElementById("tipo-biglietto")
-        offertaVisualizzata.innerHTML = `Bigl. Over65`
+        offertaVisualizzata.innerHTML = `Biglietto Over65`
         let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
         prezzoVisualizzato.innerHTML = `${bigliettoOver} €`
     } else if ((inputEta.value >= 18) || (inputEta.value <= 65)) {
         let offertaVisualizzata = document.getElementById("tipo-biglietto")
-        offertaVisualizzata.innerHTML = `Bigl. Standard`
+        offertaVisualizzata.innerHTML = `Biglietto Standard`
         let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
         prezzoVisualizzato.innerHTML = `${prezzoFinale} €` }
     }
 
     if (datiValidi) {
-        let numeroCarrozza = Math.floor(Math.random() * 15)
+        let numeroCarrozza = Math.floor(Math.random() * 15 + 1)
         let carrozzaPasseggero = document.getElementById("numero-carrozza")
         carrozzaPasseggero.innerHTML = `${numeroCarrozza}`
 
