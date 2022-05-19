@@ -13,43 +13,47 @@
     <div class="full-view">
         <div class="container">
 
+            <!--FORM DI INSERIMENTO DATI PER GENERARE IL BIGLIETTO-->
             <h3 class="text-uppercase text-white text-center py-3">Calcola il prezzo del tuo biglietto</h3>
 
             <div class="data-container text-center">
-
                 <div class="input-container d-flex justify-content-center">
                     <div class="row">
+
                         <div class="col">
                             <h6 class="text-center">Nome Cognome</h6>
-                            <input type="text">
+                            <input type="text" name="nome" class="text-center">
                         </div>
+
                         <div class="col">
-                            <h6 class="text-center">Nome Cognome</h6>
-                            <input type="number">
+                            <h6 class="text-center">Km da percorrere</h6>
+                            <input type="number" name="km" class="text-center">
                         </div>
+
                         <div class="col">
-                            <h6 class="text-center">Nome Cognome</h6>
-                            <input type="number">
+                            <h6 class="text-center">Fascia d'età</h6>
+                            <input type="number" name="eta" class="text-center">
                         </div>
+
                     </div>
                 </div>
 
-                <button class="btn btn-secondary mt-5 me-3 buttonGenera">Genera</button>
-                <button class="btn btn-secondary mt-5 buttonAnnulla">Annulla</button>
+                <button class="btn btn-secondary mt-5 me-3" id="button-genera" >Genera</button>
+                <button class="btn btn-secondary mt-5" id="button-annulla" >Annulla</button>
             </div>
 
-            <h3 class="text-uppercase text-white text-center pt-3">Il tuo biglietto</h3>
 
+            <!--BIGLIETTO GENERATO CON I DATI DI CUI SOPRA-->
+            <h3 class="text-uppercase text-white text-center pt-3">Il tuo biglietto</h3>
             <div class="ticket-container">
                 <h6 class="text-uppercase mb-0 fw-bold">Dettaglio passeggeri</h6>
 
                 <div class="ticket border-top border-bottom">
                     <div class="row">
-
                         <div class="col-4">
                             <div class="passengerData bg-secondary py-4 px-2 h-100">
                                 <h6 class="text-uppercase mb-0 fw-bold">Nome Passeggero</h6>
-                                <div class="nome-passeggero fw-bold"></div>
+                                <div class="fw-bold" id="nome-passeggero"></div>
                             </div>
                         </div>
 
@@ -70,15 +74,13 @@
                                 <div class="dettagli">Costo biglietto</div>
                                 <div class="prezzo-biglietto pt-5 pb-3">xx</div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

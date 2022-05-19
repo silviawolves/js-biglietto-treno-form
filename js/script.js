@@ -1,18 +1,19 @@
 "use strict"
 
+const inputPasseggero = document.querySelector("[name=nome]")
+const inputKm = document.querySelector("[name=km]")
+const inputEta = document.querySelector("[name=eta]")
+const inputGenera = document.getElementById("button-genera")
+
+inputGenera.addEventListener ('click', function() {
+    let prezzoBiglietto = inputKm.value * 0.21
+    console.log(inputPasseggero.value, inputEta.value, inputKm.value, prezzoBiglietto)
+})
 
 
 
-
-
-
-
-
-
-
-
-
-
+//const nomeVisualizzato = document.getElementById("nome-passeggero")
+//nomeVisualizzato.innerHTML = inputPasseggero.value
 
 
 
