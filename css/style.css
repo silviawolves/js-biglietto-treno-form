@@ -1,8 +1,15 @@
+:root {
+    --fucsia: #B91450;
+    --grigio: #cccccc;
+    --oro: #f2a15a;
+}
+
 .full-view {
-    background-color: #B91450;
+    background-color: var(--fucsia);
     height: 100vh;
 }
 
+/* FORM INSERIMENTO DATI */
 .data-container {
     width: 80%;
     background-color: white;
@@ -12,12 +19,41 @@
     padding: 2rem 1rem;
 }
 
+.label {
+    color: var(--fucsia);
+    padding-bottom: 1rem;
+    font-weight: normal;
+    font-size: .9rem;
+}
+
+input[type=text], input[type=number] {
+    border: 1px solid var(--fucsia);
+    border-radius: 5px;
+}
+
+.my-button {
+    margin-top: 2rem;
+    background-color: var(--grigio);
+    color: var(--fucsia);
+    font-weight: bold;
+    border: 1px solid var(--bs-secondary);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.my-button:focus {
+    border: 1px solid var(--oro);
+    box-shadow: 0 0 2px var(--oro);
+}
+
+/* BIGLIETTO GENERATO */
 .ticket-container {
     width: 80%;
     background-color: white;
     box-shadow: 0 0 5px #333333;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .dettagli {

@@ -4,6 +4,7 @@ const inputPasseggero = document.querySelector("[name=nome]")
 const inputKm = document.querySelector("[name=km]")
 const inputEta = document.querySelector("[name=eta]")
 const inputGenera = document.getElementById("button-genera")
+const inputAnnulla = document.getElementById("button-annulla")
 
 inputGenera.addEventListener ('click', function() {
     let prezzoBiglietto = inputKm.value * 0.21
@@ -14,6 +15,9 @@ inputGenera.addEventListener ('click', function() {
     let prezzoFinale = prezzoBiglietto.toFixed(2)
     let bigliettoYoung = prezzoGiovani.toFixed(2)
     let bigliettoOver = prezzoAnziani.toFixed(2)
+
+    let nomeVisualizzato = document.getElementById("nome-passeggero")
+    nomeVisualizzato.innerHTML = `${inputPasseggero.value}`
 
         if (inputEta.value < 18) {
             prezzoGiovani
@@ -34,6 +38,10 @@ inputGenera.addEventListener ('click', function() {
             prezzoVisualizzato.innerHTML = `${prezzoFinale} €` }
 
     console.log(inputPasseggero.value, inputEta.value, inputKm.value, prezzoBiglietto, prezzoAnziani, prezzoGiovani)
+})
+
+inputAnnulla.addEventListener ('click', function() {
+    window.location.reload();
 })
 
 
