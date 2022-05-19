@@ -38,6 +38,7 @@ input[type=text], input[type=number] {
     font-weight: bold;
     border: 1px solid var(--bs-secondary);
     border-radius: 5px;
+    padding: .2rem .3rem;
     text-align: center;
     margin-top: 2.5rem;
 }
