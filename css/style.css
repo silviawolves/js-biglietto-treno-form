@@ -23,4 +23,9 @@
 .dettagli {
     font-weight: bold;
     font-size: .8rem;
+    padding-top: 1rem;
+}
+
+#tipo-biglietto, #numero-carrozza, #codice-biglietto, #prezzo-biglietto {
+    font-size: .8rem;
 }

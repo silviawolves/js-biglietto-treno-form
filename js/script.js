@@ -5,8 +5,6 @@ const inputKm = document.querySelector("[name=km]")
 const inputEta = document.querySelector("[name=eta]")
 const inputGenera = document.getElementById("button-genera")
 
-let eta = parseInt(inputEta.value)
-
 inputGenera.addEventListener ('click', function() {
     let prezzoBiglietto = inputKm.value * 0.21
     const scontoGiovani = (20 / 100 ) * prezzoBiglietto
@@ -14,16 +12,24 @@ inputGenera.addEventListener ('click', function() {
     const scontoAnziani = (40 / 100) * prezzoBiglietto
     const prezzoAnziani = prezzoBiglietto - scontoAnziani
     let prezzoFinale = prezzoBiglietto.toFixed(2)
+    let bigliettoYoung = prezzoGiovani.toFixed(2)
+    let bigliettoOver = prezzoAnziani.toFixed(2)
 
-        if (eta < 18) {
+        if (inputEta.value < 18) {
             prezzoGiovani
+            let offertaVisualizzata = document.getElementById("tipo-biglietto")
+            offertaVisualizzata.innerHTML = `Biglietto Young`
             let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
-            prezzoVisualizzato.innerHTML = `${prezzoGiovani} €`
-        } else if (eta > 65) {
+            prezzoVisualizzato.innerHTML = `${bigliettoYoung} €`
+        } else if (inputEta.value > 65) {
             prezzoAnziani
+            let offertaVisualizzata = document.getElementById("tipo-biglietto")
+            offertaVisualizzata.innerHTML = `Biglietto Over65`
             let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
-            prezzoVisualizzato.innerHTML = `${prezzoAnziani} €`
-        } else if ((eta >= 18) || (eta <= 65)) {
+            prezzoVisualizzato.innerHTML = `${bigliettoOver} €`
+        } else if ((inputEta.value >= 18) || (inputEta.value <= 65)) {
+            let offertaVisualizzata = document.getElementById("tipo-biglietto")
+            offertaVisualizzata.innerHTML = `Biglietto Standard`
             let prezzoVisualizzato = document.getElementById("prezzo-biglietto")
             prezzoVisualizzato.innerHTML = `${prezzoFinale} €` }
 
